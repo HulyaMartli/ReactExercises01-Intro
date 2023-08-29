@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from 'uuid';
+uuidv4();
+
 const myArr = ["Burak", "Marry", "Jane", "Deniz"];
 const myObj = { id: 0, isHidden: false };
 const myJsxList = [<li key="a">Burak</li>, <li key="b">Aykut</li>, <li key="c">Perihan</li>]
@@ -16,6 +19,7 @@ export function Page04() {
             </ul>
             <PeopleOfJava9 />
             <PeopleByProfession profession="Chemist" />
+            <Fruits/>
         </section>
     )
 }
@@ -55,4 +59,22 @@ function PeopleByProfession({ profession }) {
 
     )
 
+}
+
+const fruits = ["orange", "banana", "kiwi", "apple", "pineapple", "grapefruit"];
+
+const fruitUniqueIds = fruits.map( fruit => uuidv4());
+
+console.log(fruitUniqueIds)
+
+function Fruits(){
+    const fruitJsxArray = fruits.map((fruit, index)=><li key={fruitUniqueIds[index]}>{fruit}</li>)
+    return(
+        <>
+        <h3>Fruits I Like</h3>
+        <ul>
+            {fruitJsxArray}
+        </ul>
+        </>
+    )
 }
