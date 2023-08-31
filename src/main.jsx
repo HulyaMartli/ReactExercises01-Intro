@@ -10,8 +10,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
  */
 
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "./App";
+import { StrictMode } from "react";
 
 // react root'u haline getirmek istediğin sıradan html elemanını seç
 const rootEl = document.getElementById("root");
@@ -36,4 +37,10 @@ isimlerini büyük harfle başlatmalıyız.
 4. Bir component functionından undefined, null, string => yani js expressionları, jsx elemanları döndürülebilir.
 */
 
-root.render(<App/>);
+root.render(
+  /* StrictMode komponentlerimixin saflığını kontrol
+  edebilmemiz için kullanılır */
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

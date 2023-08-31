@@ -6,7 +6,7 @@ export function Page05() {
             <Recipe guestCount={3}/>
 
             <Table/>
-            <Table/>
+            <GlassTable/>
         </section>
     )
 }
@@ -55,6 +55,10 @@ function Table(){
             <Chair/>
             <Chair/>
             <Chair/>
+
+            <PureChair guestCount={1}/>
+            <PureChair guestCount={2}/>
+            <PureChair guestCount={3}/>
         </ul>
         </>
     );
@@ -63,4 +67,18 @@ function Table(){
 function Chair(){
     guestCount++;
     return <li>Chair(s) for {guestCount} guests.</li>;
+}
+
+function PureChair({guestCount, tableType="the table"}){
+    return <li>Chair(s) for {guestCount} guests at {tableType}.</li>
+}
+
+// Local mutations are fine:
+function GlassTable(){
+    const chairs = []
+    for(let i=1; i<10; i++){
+        chairs.push(<PureChair key={i} guestCount={i} tableType="the glass table"/>)
+    }
+
+    return chairs;
 }
