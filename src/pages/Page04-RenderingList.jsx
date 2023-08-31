@@ -71,7 +71,7 @@ function Fruits(){
     const fruitJsxArray = fruits.map((fruit, index)=><li key={fruitUniqueIds[index]}>{fruit}</li>)
     return(
         <>
-        <h3>Fruits I Like</h3>
+        <h3>Fruits</h3>
         <ul>
             {fruitJsxArray}
         </ul>
