@@ -82,3 +82,13 @@ function GlassTable(){
 
     return chairs;
 }
+
+// Side Effects
+/*
+ * dom api kullanımı
+ * fetch api ile server request yapılması 
+ * local scope dışında global bir değişken 
+ * değerinin değiştirilmesi saflığı bozar ve buna 
+ * yan etkiler (side effects) denir.
+*/
+

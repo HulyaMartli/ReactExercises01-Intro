@@ -10,6 +10,7 @@ import { MenuSocial } from "./components/MenuSocial";
 import { Page03 } from "./pages/Page03-ConditionalRendering";
 import { Page04 } from "./pages/Page04-RenderingList";
 import { Page05 } from "./pages/Page05-KeepingComponentsPure";
+import { Page06 } from "./pages/Page06-Interaction";
 
 /*
 jsx etiket kuralları
@@ -31,7 +32,7 @@ attributeları tanımlamak için
 */
 
 export default function App() {
-  const url = "/05";
+  const url = "/06";
   return (
     <>
       <header className="basic-header">
@@ -44,6 +45,7 @@ export default function App() {
         { url === "/03" && <Page03 />}
         { url === "/04" && <Page04 />}
         { url === "/05" && <Page05 />}
+        { url === "/06" && <Page06 />}
       </main>
       <footer>
         <MenuSocial />
